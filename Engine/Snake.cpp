@@ -5,6 +5,9 @@
 
 Snake::Snake()
 {
+	for (int i = 0; i < length; i++) {
+		body.push_back(Link());
+	}
 	for (int i = 1; i < length; i++) {
 		body[i].x = body[i - 1].x + linkSize;
 	}
@@ -34,7 +37,7 @@ void Snake::grow()
 }
 void Snake::move()
 {
-	for (int i = length; i > 0; i--) {
+	for (int i = length-1; i > 0; i--) {
 		body[i].x = body[i - 1].x;
 		body[i].y = body[i - 1].y;
 	}

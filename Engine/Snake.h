@@ -1,15 +1,16 @@
 #pragma once
 #include "Graphics.h"
 #include "Keyboard.h"
+#include <Vector>
 class Snake {
 private:
 	struct Link {
 		int x = Graphics::ScreenWidth / 2;
 		int y = Graphics::ScreenHeight / 2;
 	};
-	Link body[100];
 	int linkSize = 10;
 	int length = 5;
+	std::vector<Link> body;
 	boolean movingUp = false;
 	boolean movingDown = false;
 	boolean movingRight = false;
