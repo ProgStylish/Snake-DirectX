@@ -24,8 +24,11 @@
 Game::Game(MainWindow& wnd)
 	:
 	wnd(wnd),
-	gfx(wnd)
+	gfx(wnd),
+	board(20, 20)
 {
+	propertiesLoader.loadProperties();
+	snakeMoveDelay = propertiesLoader.getSpeed();
 }
 
 void Game::Go()
@@ -51,6 +54,7 @@ void Game::ComposeFrame()
 {
 	food.draw(gfx);
 	snake.draw(gfx);
+	board.draw(gfx);
 }
 
 void Game::testEatenFood() {

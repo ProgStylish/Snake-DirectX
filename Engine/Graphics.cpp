@@ -325,6 +325,29 @@ void Graphics::putSquare(int x, int y, int size, Color c)
 	}
 }
 
+void Graphics::drawRect(int xCenter, int yCenter, int width, int height, int thikness, Color c)
+{
+	for (int i = xCenter - width / 2 - thikness; i < xCenter - width / 2; i++) {
+		for (int j = yCenter - height / 2; j < yCenter + height / 2; j++) {
+			PutPixel(i,j,c);
+		}
+	}
+	for (int i = xCenter + width / 2 + 2; i < xCenter + width / 2 + thikness + 2; i++) {
+		for (int j = yCenter - height / 2; j < yCenter + height / 2; j++) {
+			PutPixel(i, j, c);
+		}
+	}
+	for (int i = xCenter - width / 2; i < xCenter + width / 2 + 2; i++) {
+		for (int j = yCenter - height/2 - thikness; j < yCenter - height/2; j++) {
+			PutPixel(i, j, c);
+		}
+	}
+	for (int i = xCenter - width / 2; i < xCenter + width / 2 + 2; i++) {
+		for (int j = yCenter + height / 2  + 2; j < yCenter + height / 2 + thikness + 2; j++) {
+			PutPixel(i, j, c);
+		}
+	}
+}
 
 //////////////////////////////////////////////////
 //           Graphics Exception

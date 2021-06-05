@@ -25,6 +25,8 @@
 #include "Graphics.h"
 #include "Snake.h"
 #include "Food.h"
+#include "Board.h"
+#include "PropertiesLoader.h"
 
 class Game
 {
@@ -40,12 +42,14 @@ private:
 	/*  User Functions              */
 	/********************************/
 private:
-	static constexpr int snakeMoveDelay = 10;
+	int snakeMoveDelay = 5;
 	int snakeMoveCounter = 0;
 	MainWindow& wnd;
 	Graphics gfx;
 	Snake snake;
 	Food food;
+	Board board;
+	PropertiesLoader propertiesLoader;
 	void testEatenFood();
 	/********************************/
 	/*  User Variables              */
